@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+      padding: 20px;
+    }
+    form {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: #222;
+    }
+    form h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    form input[type="text"],
+    form input[type="number"],
+    form select,
+    form input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #333;
+      background-color: #444;
+      color: #fff;
+      box-sizing: border-box;
+    }
+    form button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    form button.edit {
+      background-color: #008CBA;
+    }
+    form button.delete {
+      background-color: #f44336;
+    }
+    input[type="text"][name="search"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #333;
+      background-color: #444;
+      color: #fff;
+      box-sizing: border-box;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #222;
+      color: #fff;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+    th {
+      background-color: #111;
+    }
+    button {
+      font-size: 16px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button.edit {
+      background-color: #4CAF50;
+      color: white;
+    }
+    button.delete {
+      background-color: #f44336;
+      color: white;
+    }
+    button.edit:hover, button.delete:hover {
+      background-color: #333;
+    }
+    ::placeholder {
+      color: #999;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border: 1px solid #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <h1>Student Management System</h1>
+  <form id="studentForm">
+    <h2>Add/Edit Student</h2>
+    <input type="hidden" name="studentId">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="number" name="age" placeholder="Age" required>
+    <input type="text" name="grade" placeholder="Grade" required>
+    <input type="text" name="degree" placeholder="Degree" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <button type="submit" id="submitButton">Add Student</button>
+    <button type="button" id="cancelButton">Cancel</button>
+  </form>
+  <h2>Student List</h2>
+  <input type="text" name="search" placeholder="Search by name, email, or degree" id="searchInput">
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Grade</th>
+        <th>Degree</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="studentTableBody">
+      <tr>
+        <td>1</td>
+        <td>Alice</td>
+        <td>21</td>
+        <td>A</td>
+        <td>Btech</td>
+        <td>alice@example.com</td>
+        <td>
+          <button class="edit" data-id="1">&#9998;</button>
+          <button class="delete" data-id="1">&#128465;</button>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Bob</td>
+        <td>22</td>
+        <td>B</td>
+        <td>MBA</td>
+        <td>bob@example.com</td>
+        <td>
+          <button class="edit" data-id="2">&#9998;</button>
+          <button class="delete" data-id="2">&#128465;</button>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Charlie</td>
+        <td>20</td>
+        <td>C</td>
+        <td>Arts</td>
+        <td>charlie@example.com</td>
+        <td>
+          <button class="edit" data-id="3">&#9998;</button>
+          <button class="delete" data-id="3">&#128465;</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
